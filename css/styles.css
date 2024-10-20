@@ -188,7 +188,7 @@ body {
 .card-title {
     font-family: 'Lobster', cursive; /* Cambia esto por la fuente que elijas */
     font-size: 1.5rem; /* Tamaño del texto del título */
-    color: #c0392b; /* Color del texto (puedes cambiarlo) */
+    color: #c0392b !important; /* Color del texto (puedes cambiarlo) */
     margin-bottom: 0.5rem; /* Espacio debajo del título */
 }
 
@@ -257,7 +257,12 @@ body {
     padding: 30px; /* Espaciado interno */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra */
 }
-
+.form-container {
+    width: 800px; /* Ajusta el ancho máximo */
+    margin: 0 auto; /* Centra el formulario */
+    padding: 20px;
+  }
+  
 /* Estilos para los campos del formulario */
 .form-group {
     margin-bottom: 15px; /* Espaciado entre los campos del formulario */
