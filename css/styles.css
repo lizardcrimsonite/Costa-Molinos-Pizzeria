@@ -1,0 +1,340 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para la sección hero-header */
+.hero-header {
+    display: flex; /* Usa flexbox para centrar el contenido */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 60vh; /* Ajusta la altura del hero header */
+    background-image: url('../images/architecture-1851054_1280.jpg');
+    background-size: cover; /* Cubre el contenedor con la imagen */
+    background-position: center; /* Centra la imagen en el contenedor */
+}
+
+.hero-header img {
+    max-width: 100%; /* Ajusta el ancho máximo del logo */
+    height: auto; /* Mantiene la proporción de la imagen */
+    padding: 20px; /* Espaciado alrededor del logo, opcional */
+    margin-top: 25px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .hero-header {
+        height: 50vh; /* Reduce la altura en pantallas más pequeñas */
+    }
+
+    .hero-header img {
+        max-width: 90%; /* Permite un poco más de ancho en pantallas pequeñas */
+    }
+}
+
+/* Estilos generales para el navbar */
+.navbar {
+    padding: 10px 20px; /* Espaciado interno */
+    font-family: "Lobster Two", sans-serif;
+    font-size: 35px; /* Tamaño de fuente */
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
+}
+
+/* Estilo para los enlaces del navbar */
+.nav-link {
+    color: #df9e12 !important; /* Color del texto */
+    padding: 10px; /* Espaciado interno de los enlaces */
+    transition: color 0.3s; /* Transición suave al cambiar el color */
+}
+
+/* Cambia el color al pasar el mouse */
+.nav-link:hover {
+    color: #34df97 !important; /* Color al pasar el mouse */
+}
+
+/* Asegura que los iconos sociales estén a la derecha */
+.social-icons {
+    margin-left: auto; /* Empuja los íconos a la derecha */
+    display: flex; /* Usa flexbox para alinear los íconos */
+    align-items: center; /* Centra verticalmente los íconos */
+    justify-content: center; /* Centra horizontalmente los íconos */
+    flex-grow: 1; /* Permite que el contenedor ocupe espacio */
+}
+
+/* Estilo para los íconos */
+.social-icons a {
+    color: #333; /* Color de los íconos */
+    font-size: 1.5rem; /* Tamaño de los íconos */
+    margin-left: 10px; /* Espaciado entre íconos */
+    transition: color 0.3s; /* Transición suave para el cambio de color */
+    text-decoration: none; /* Elimina el subrayado en los íconos */
+}
+
+/* Color de los íconos al pasar el mouse */
+.social-icons a:hover {
+    color: #0fad6c; /* Color en hover */
+}
+
+/* Elimina el subrayado en los enlaces del navbar */
+.navbar-nav .nav-link {
+    text-decoration: none; /* Sin subrayado */
+}
+
+/* Espaciado entre enlaces del navbar */
+.navbar-nav .nav-item {
+    margin-right: 45px; /* Espacio entre enlaces */
+}
+
+
+/* Aseguramos que el navbar colapse correctamente */
+.collapse.navbar-collapse {
+    left: 0; /* Alinear a la izquierda */
+    top: 100%; /* Justo debajo del navbar */
+}
+
+
+/* Responsivo para el navbar */
+@media (max-width: 768px) {
+    .navbar {
+        font-size: 1.5rem; /* Ajusta el tamaño de la fuente en pantallas pequeñas */
+    }
+
+    .navbar .social-icons {
+        justify-content: flex-start; /* Alinea los íconos a la izquierda */
+        margin-left: 0; /* Elimina el margen izquierdo */    }
+
+    .social-icons a {
+        font-size: 1.2rem; /* Ajusta el tamaño de los íconos en pantallas pequeñas */
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar {
+        font-size: 1.2rem; /* Ajusta aún más el tamaño de la fuente en pantallas muy pequeñas */
+    }
+}
+
+
+/* Estilos generales del carousel */
+.hero-carousel {
+    position: relative;
+    overflow: hidden; /* Asegura que las imágenes no se desborden */
+    height: 50vh; /* Ajusta la altura del carousel */
+}
+
+.carousel-inner {
+    height: 100%; /* Asegura que el contenedor interno del carousel ocupe el 100% de la altura */
+}
+
+.carousel-item {
+    height: 100%; /* Asegura que cada item ocupe el 100% de la altura */
+}
+
+/* Estilo para las imágenes del carousel */
+.carousel-item img {
+    object-fit: cover; /* Cubre el contenedor manteniendo la proporción de la imagen */
+    width: 100%; /* Asegura que la imagen ocupe el 100% del ancho del contenedor */
+    height: 100%; /* Asegura que la imagen ocupe el 100% de la altura del contenedor */
+}
+
+/* Estilos de los controles del carousel */
+.carousel-control-prev,
+.carousel-control-next {
+    filter: invert(100%); /* Hace que las flechas sean blancas para mayor visibilidad */
+}
+
+
+/* Media Queries para hacer el carousel responsivo */
+@media (max-width: 576px) {
+    .hero {
+        height: 40vh; /* Altura más pequeña en pantallas pequeñas */
+    }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+    .hero {
+        height: 50vh; /* Altura media para pantallas medianas */
+    }
+}
+
+@media (min-width: 769px) {
+    .hero {
+        height: 60vh; /* Altura normal en pantallas grandes */
+    }
+}
+
+
+/* Estilos generales para la sección del menú */
+#menu {
+    background-color: #f8f9fa; /* Color de fondo ligero */
+    padding: 50px 0; /* Espaciado vertical */
+}
+
+#menu h2 {
+    margin-bottom: 30px; /* Espaciado debajo del título */
+    font-family: "Lobster Two", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Estilo para las tarjetas */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efecto de transición suave */
+}
+
+.card-title {
+    font-family: 'Lobster', cursive; /* Cambia esto por la fuente que elijas */
+    font-size: 1.5rem; /* Tamaño del texto del título */
+    color: #c0392b; /* Color del texto (puedes cambiarlo) */
+    margin-bottom: 0.5rem; /* Espacio debajo del título */
+}
+
+.card-text {
+    font-family: 'Montserrat', sans-serif; /* Cambia esto por la fuente que elijas */
+    font-size: 1rem; /* Tamaño del texto de la descripción */
+    color: #333; /* Color del texto (puedes cambiarlo) */
+    margin-bottom: 0.5rem; /* Espacio debajo de la descripción */
+}
+
+.card-text strong {
+    color: #d35400; /* Color del precio (puedes cambiarlo) */
+    font-size: 1.1rem; /* Tamaño del texto del precio */
+}
+
+.card-img-top {
+    height: 200px; /* Ajusta la altura según tus necesidades */
+    object-fit: cover; /* Esto recortará la imagen si es necesario */
+}
+
+/* Efecto al pasar el mouse sobre la tarjeta */
+.card:hover {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño de la tarjeta */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra más profunda al pasar el mouse */
+}
+
+/* Media Queries para ajustar las tarjetas */
+@media (max-width: 768px) {
+    .card {
+        margin-bottom: 20px; /* Espaciado entre tarjetas en pantallas pequeñas */
+    }
+}
+
+@media (min-width: 768px) {
+    .card {
+        margin-bottom: 30px; /* Espaciado entre tarjetas en pantallas medianas y grandes */
+    }
+}
+
+
+/* Estilos generales para la sección de contacto */
+#contact {
+    background-image: url('../images/sunset-6387462_1280.jpg');
+    padding: 20px 0; /* Espaciado vertical */
+    background-size: cover; /* Cubre todo el contenedor */
+}
+
+#contact h2 {
+    margin-bottom: 30px; /* Espaciado debajo del título */
+    font-family: "Lobster Two", sans-serif;
+    color: #f7f8f8;
+
+}
+
+/* Estilos para los párrafos */
+#contact p {
+    margin-bottom: 20px; /* Espaciado entre párrafos */
+    font-size: 18px; /* Tamaño de fuente */
+    color: white;
+}
+
+/* Estilos para el formulario */
+.glass-form {
+    background: rgba(235, 235, 235, 0.8); /* Fondo semitransparente */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 30px; /* Espaciado interno */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra */
+}
+
+/* Estilos para los campos del formulario */
+.form-group {
+    margin-bottom: 15px; /* Espaciado entre los campos del formulario */
+}
+
+.form-control {
+    border: 1px solid #ced4da; /* Borde estándar */
+    border-radius: 4px; /* Bordes redondeados */
+    padding: 10px; /* Espaciado interno */
+    transition: border-color 0.3s ease; /* Efecto de transición para el borde */
+}
+
+/* Cambiar el borde al enfocar el campo del formulario */
+.form-control:focus {
+    border-color: #007bff; /* Color de borde al enfocar */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Sombra al enfocar */
+}
+
+/* Estilo para el botón */
+.btn-primary {
+    background-color: #007bff; /* Color de fondo del botón */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 4px; /* Bordes redondeados */
+    transition: background-color 0.3s ease; /* Efecto de transición */
+}
+
+/* Efecto al pasar el mouse sobre el botón */
+.btn-primary:hover {
+    background-color: #0056b3; /* Color de fondo más oscuro al pasar el mouse */
+}
+
+/* Media Queries para ajustar el formulario */
+@media (max-width: 768px) {
+    .glass-form {
+        padding: 20px; /* Espaciado reducido en pantallas pequeñas */
+    }
+
+    #contact p {
+        font-size: 14px; /* Tamaño de fuente reducido */
+    }
+}
+
+/* Estilos generales para el footer */
+body footer {
+    background-color: #05910c; /* Color de fondo claro */
+    padding: 20px 0; /* Espaciado vertical */
+}
+
+/* Estilo del texto en el footer */
+footer p {
+    margin: 0; /* Sin margen en el párrafo */
+    font-size: 16px; /* Tamaño de fuente */
+    color: white;
+}
+
+/* Estilos para los iconos de redes sociales */
+footer .fab {
+    font-size: 24px; /* Tamaño de los iconos */
+    color:white; /* Color de los iconos */
+    transition: color 0.3s ease; /* Efecto de transición para el color */
+    text-decoration: none; /* Elimina el subrayado en los íconos */
+    margin-top: 20px;
+}
+
+/* Efecto al pasar el mouse sobre los iconos */
+footer .fab:hover {
+    color: #007bff; /* Color más claro al pasar el mouse */
+}
+
+/* Media Queries para ajustar el footer en pantallas pequeñas */
+@media (max-width: 768px) {
+    footer p {
+        font-size: 14px; /* Tamaño de fuente reducido en pantallas pequeñas */
+    }
+
+    footer .fab {
+        font-size: 20px; /* Tamaño de iconos reducido en pantallas pequeñas */
+    }
+}
