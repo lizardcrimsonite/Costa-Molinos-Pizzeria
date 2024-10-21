@@ -4,6 +4,7 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
+    overflow-x: hidden; /* Evita el desbordamiento horizontal */
 }
 
 /* Estilos para la sección hero-header */
@@ -15,6 +16,8 @@ body {
     background-image: url('../images/architecture-1851054_1280.jpg');
     background-size: cover; /* Cubre el contenedor con la imagen */
     background-position: center; /* Centra la imagen en el contenedor */
+    width: 100%; /* Asegura que el menú ocupe el 100% del ancho */
+
 }
 
 .hero-header img {
@@ -45,15 +48,23 @@ body {
 
 /* Estilo para los enlaces del navbar */
 .nav-link {
-    color: #df9e12 !important; /* Color del texto */
+    color: #000000 !important; /* Color del texto */
     padding: 10px; /* Espaciado interno de los enlaces */
-    transition: color 0.3s; /* Transición suave al cambiar el color */
+    transition: color 0.3s ease; /* Transición suave al cambiar el color */
 }
 
-/* Cambia el color al pasar el mouse */
-.nav-link:hover {
-    color: #34df97 !important; /* Color al pasar el mouse */
-}
+/* Cambia el color en hover para cada enlace */
+.home-link:hover {
+    color: #ff5733 !important; /* Color para "Inicio" */
+  }
+  
+  .menu-link:hover {
+    color: #ddac24 !important; /* Color para "Menú" */
+  }
+  
+  .contact-link:hover {
+    color: #2ecc71 !important; /* Color para "Contacto" */
+  }
 
 /* Asegura que los iconos sociales estén a la derecha */
 .social-icons {
@@ -67,16 +78,24 @@ body {
 /* Estilo para los íconos */
 .social-icons a {
     color: #333; /* Color de los íconos */
-    font-size: 1.5rem; /* Tamaño de los íconos */
-    margin-left: 10px; /* Espaciado entre íconos */
+    font-size: 2rem; /* Tamaño de los íconos */
+    margin-left: 30px; /* Espaciado entre íconos */
     transition: color 0.3s; /* Transición suave para el cambio de color */
     text-decoration: none; /* Elimina el subrayado en los íconos */
 }
 
-/* Color de los íconos al pasar el mouse */
-.social-icons a:hover {
-    color: #0fad6c; /* Color en hover */
-}
+/* Color en hover para cada ícono */
+.facebook-icon:hover {
+    color: #3b5998 !important; /* Color de Facebook */
+  }
+  
+  .instagram-icon:hover {
+    color: #e4405f !important; /* Color de Instagram */
+  }
+  
+  .twitter-icon:hover {
+    color: #55acee !important; /* Color de Twitter */
+  }
 
 /* Elimina el subrayado en los enlaces del navbar */
 .navbar-nav .nav-link {
@@ -96,27 +115,69 @@ body {
 }
 
 
-/* Responsivo para el navbar */
-@media (max-width: 768px) {
-    .navbar {
-        font-size: 1.5rem; /* Ajusta el tamaño de la fuente en pantallas pequeñas */
-    }
-
-    .navbar .social-icons {
-        justify-content: flex-start; /* Alinea los íconos a la izquierda */
-        margin-left: 0; /* Elimina el margen izquierdo */    }
-
-    .social-icons a {
-        font-size: 1.2rem; /* Ajusta el tamaño de los íconos en pantallas pequeñas */
-    }
-}
-
+/* Media Queries para pantallas pequeñas */
 @media (max-width: 576px) {
     .navbar {
-        font-size: 1.2rem; /* Ajusta aún más el tamaño de la fuente en pantallas muy pequeñas */
+        font-size: 25px; /* Reduce el tamaño de fuente en pantallas pequeñas */
+        padding: 5px 10px; /* Ajusta el padding en pantallas pequeñas */
+    }
+
+    .navbar-nav .nav-item {
+        margin-right: 15px; /* Reduce el espacio entre enlaces */
+    }
+
+    .social-icons {
+        margin-left: 0; /* Elimina el margen a la izquierda */
+        justify-content: flex-end; /* Alinea íconos a la derecha */
+    }
+
+    .social-icons a {
+        font-size: 1.5rem; /* Reduce el tamaño de los íconos */
+        margin-left: 15px; /* Reduce el espacio entre íconos */
     }
 }
 
+/* Media Queries para pantallas medianas */
+@media (min-width: 577px) and (max-width: 768px) {
+    .navbar {
+        font-size: 30px; /* Tamaño de fuente moderado en pantallas medianas */
+        padding: 8px 15px; /* Ajusta el padding en pantallas medianas */
+    }
+
+    .navbar-nav .nav-item {
+        margin-right: 30px; /* Reduce el espacio entre enlaces */
+    }
+
+    .social-icons {
+        margin-left: auto; /* Mantiene íconos a la derecha */
+    }
+
+    .social-icons a {
+        font-size: 1.75rem; /* Tamaño de los íconos */
+        margin-left: 20px; /* Espacio entre íconos */
+    }
+}
+
+/* Media Queries para pantallas grandes */
+@media (min-width: 769px) {
+    .navbar {
+        font-size: 35px; /* Tamaño de fuente original en pantallas grandes */
+        padding: 10px 20px; /* Padding original */
+    }
+
+    .navbar-nav .nav-item {
+        margin-right: 45px; /* Espacio entre enlaces original */
+    }
+
+    .social-icons {
+        margin-left: auto; /* Mantiene íconos a la derecha */
+    }
+
+    .social-icons a {
+        font-size: 2rem; /* Tamaño de los íconos original */
+        margin-left: 30px; /* Espacio entre íconos original */
+    }
+}
 
 /* Estilos generales del carousel */
 .hero-carousel {
@@ -147,25 +208,41 @@ body {
 }
 
 
-/* Media Queries para hacer el carousel responsivo */
+/* Media Queries para pantallas pequeñas */
 @media (max-width: 576px) {
-    .hero {
+    .hero-carousel {
         height: 40vh; /* Altura más pequeña en pantallas pequeñas */
     }
+
+    .carousel-item img {
+        object-fit: cover; /* Mantiene el recorte de la imagen */
+        height: 100%; /* Asegura que la imagen ocupe el 100% de la altura */
+    }
 }
 
+/* Media Queries para pantallas medianas */
 @media (min-width: 577px) and (max-width: 768px) {
-    .hero {
-        height: 50vh; /* Altura media para pantallas medianas */
+    .hero-carousel {
+        height: 50vh; /* Altura moderada en pantallas medianas */
+    }
+
+    .carousel-item img {
+        object-fit: cover; /* Mantiene el recorte de la imagen */
+        height: 100%; /* Asegura que la imagen ocupe el 100% de la altura */
     }
 }
 
+/* Media Queries para pantallas grandes */
 @media (min-width: 769px) {
-    .hero {
-        height: 60vh; /* Altura normal en pantallas grandes */
+    .hero-carousel {
+        height: 60vh; /* Altura mayor en pantallas grandes */
+    }
+
+    .carousel-item img {
+        object-fit: cover; /* Mantiene el recorte de la imagen */
+        height: 100%; /* Asegura que la imagen ocupe el 100% de la altura */
     }
 }
-
 
 /* Estilos generales para la sección del menú */
 #menu {
@@ -193,7 +270,10 @@ body {
 }
 
 .card-text {
-    font-family: 'Montserrat', sans-serif; /* Cambia esto por la fuente que elijas */
+    font-family: "Cinzel", serif;
+    font-optical-sizing: auto;
+    font-weight: thin;
+    font-style: normal; 
     font-size: 1rem; /* Tamaño del texto de la descripción */
     color: #333; /* Color del texto (puedes cambiarlo) */
     margin-bottom: 0.5rem; /* Espacio debajo de la descripción */
@@ -215,19 +295,65 @@ body {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra más profunda al pasar el mouse */
 }
 
-/* Media Queries para ajustar las tarjetas */
-@media (max-width: 768px) {
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 576px) {
+    #menu {
+        padding: 30px 0; /* Espaciado vertical reducido */
+    }
+
+    #menu h2 {
+        font-size: 1.5rem; /* Tamaño de fuente más pequeño */
+        margin-bottom: 20px; /* Espaciado debajo del título reducido */
+    }
+
     .card {
-        margin-bottom: 20px; /* Espaciado entre tarjetas en pantallas pequeñas */
+        margin-bottom: 15px; /* Espaciado entre tarjetas en pantallas pequeñas */
+    }
+
+    .card-img-top {
+        height: 150px; /* Altura de imagen ajustada para pantallas pequeñas */
     }
 }
 
-@media (min-width: 768px) {
+/* Media Queries para pantallas medianas */
+@media (min-width: 577px) and (max-width: 768px) {
+    #menu {
+        padding: 40px 0; /* Espaciado vertical moderado */
+    }
+
+    #menu h2 {
+        font-size: 2rem; /* Tamaño de fuente moderado */
+        margin-bottom: 25px; /* Espaciado debajo del título */
+    }
+
     .card {
-        margin-bottom: 30px; /* Espaciado entre tarjetas en pantallas medianas y grandes */
+        margin-bottom: 20px; /* Espaciado entre tarjetas en pantallas medianas */
+    }
+
+    .card-img-top {
+        height: 180px; /* Altura de imagen ajustada para pantallas medianas */
     }
 }
 
+/* Media Queries para pantallas grandes */
+@media (min-width: 769px) {
+    #menu {
+        padding: 50px 0; /* Espaciado vertical estándar */
+    }
+
+    #menu h2 {
+        font-size: 2.5rem; /* Tamaño de fuente mayor */
+        margin-bottom: 30px; /* Espaciado debajo del título */
+    }
+
+    .card {
+        margin-bottom: 30px; /* Espaciado entre tarjetas en pantallas grandes */
+    }
+
+    .card-img-top {
+        height: 200px; /* Altura de imagen estándar para pantallas grandes */
+    }
+}
 
 /* Estilos generales para la sección de contacto */
 #contact {
@@ -245,8 +371,12 @@ body {
 
 /* Estilos para los párrafos */
 #contact p {
+    font-family: "Cinzel", serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
     margin-bottom: 20px; /* Espaciado entre párrafos */
-    font-size: 18px; /* Tamaño de fuente */
+    font-size: 15px; /* Tamaño de fuente */
     color: white;
 }
 
@@ -295,14 +425,74 @@ body {
     background-color: #0056b3; /* Color de fondo más oscuro al pasar el mouse */
 }
 
-/* Media Queries para ajustar el formulario */
-@media (max-width: 768px) {
-    .glass-form {
-        padding: 20px; /* Espaciado reducido en pantallas pequeñas */
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 576px) {
+    #contact {
+        padding: 10px 0; /* Espaciado vertical reducido */
+    }
+
+    #contact h2 {
+        font-size: 1.5rem; /* Tamaño de fuente más pequeño */
+        margin-bottom: 20px; /* Espaciado debajo del título reducido */
     }
 
     #contact p {
         font-size: 14px; /* Tamaño de fuente reducido */
+    }
+
+    .form-container {
+        width: 90%; /* Ajusta el ancho máximo a un porcentaje para pantallas pequeñas */
+        padding: 10px; /* Espaciado interno reducido */
+    }
+
+    .glass-form {
+        padding: 20px; /* Espaciado interno reducido en el formulario */
+    }
+}
+
+/* Media Queries para pantallas medianas */
+@media (min-width: 577px) and (max-width: 768px) {
+    #contact {
+        padding: 15px 0; /* Espaciado vertical moderado */
+    }
+
+    #contact h2 {
+        font-size: 2rem; /* Tamaño de fuente moderado */
+        margin-bottom: 25px; /* Espaciado debajo del título */
+    }
+
+    #contact p {
+        font-size: 15px; /* Tamaño de fuente estándar */
+    }
+
+    .form-container {
+        width: 80%; /* Ajusta el ancho máximo a un porcentaje para pantallas medianas */
+        padding: 15px; /* Espaciado interno moderado */
+    }
+
+    .glass-form {
+        padding: 25px; /* Espaciado interno moderado en el formulario */
+    }
+}
+
+/* Media Queries para pantallas grandes */
+@media (min-width: 769px) {
+    #contact {
+        padding: 20px 0; /* Espaciado vertical estándar */
+    }
+
+    #contact h2 {
+        font-size: 2.5rem; /* Tamaño de fuente mayor */
+        margin-bottom: 30px; /* Espaciado debajo del título */
+    }
+
+    .form-container {
+        width: 800px; /* Ancho estándar para pantallas grandes */
+        padding: 20px; /* Espaciado interno estándar */
+    }
+
+    .glass-form {
+        padding: 30px; /* Espaciado interno estándar en el formulario */
     }
 }
 
@@ -333,13 +523,50 @@ footer .fab:hover {
     color: #007bff; /* Color más claro al pasar el mouse */
 }
 
-/* Media Queries para ajustar el footer en pantallas pequeñas */
-@media (max-width: 768px) {
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 576px) {
+    body footer {
+        padding: 15px 0; /* Espaciado vertical reducido */
+    }
+
     footer p {
-        font-size: 14px; /* Tamaño de fuente reducido en pantallas pequeñas */
+        font-size: 14px; /* Tamaño de fuente reducido */
     }
 
     footer .fab {
-        font-size: 20px; /* Tamaño de iconos reducido en pantallas pequeñas */
+        font-size: 20px; /* Tamaño de los iconos reducido */
+        margin-top: 15px; /* Espaciado superior reducido */
+    }
+}
+
+/* Media Queries para pantallas medianas */
+@media (min-width: 577px) and (max-width: 768px) {
+    body footer {
+        padding: 18px 0; /* Espaciado vertical moderado */
+    }
+
+    footer p {
+        font-size: 15px; /* Tamaño de fuente moderado */
+    }
+
+    footer .fab {
+        font-size: 22px; /* Tamaño de los iconos moderado */
+        margin-top: 18px; /* Espaciado superior moderado */
+    }
+}
+
+/* Media Queries para pantallas grandes */
+@media (min-width: 769px) {
+    body footer {
+        padding: 20px 0; /* Espaciado vertical estándar */
+    }
+
+    footer p {
+        font-size: 16px; /* Tamaño de fuente estándar */
+    }
+
+    footer .fab {
+        font-size: 24px; /* Tamaño de los iconos estándar */
+        margin-top: 20px; /* Espaciado superior estándar */
     }
 }
