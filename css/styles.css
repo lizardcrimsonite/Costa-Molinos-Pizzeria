@@ -16,8 +16,6 @@ body {
     background-image: url('../images/architecture-1851054_1280.jpg');
     background-size: cover; /* Cubre el contenedor con la imagen */
     background-position: center; /* Centra la imagen en el contenedor */
-    width: 100%; /* Asegura que el menú ocupe el 100% del ancho */
-
 }
 
 .hero-header img {
@@ -44,6 +42,7 @@ body {
     font-family: "Lobster Two", sans-serif;
     font-size: 35px; /* Tamaño de fuente */
     background-color: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
+    position: relative;
 }
 
 /* Estilo para los enlaces del navbar */
@@ -68,7 +67,7 @@ body {
 
 /* Asegura que los iconos sociales estén a la derecha */
 .social-icons {
-    margin-left: auto; /* Empuja los íconos a la derecha */
+    margin-right: auto; /* Mueve los íconos a la izquierda */
     display: flex; /* Usa flexbox para alinear los íconos */
     align-items: center; /* Centra verticalmente los íconos */
     justify-content: center; /* Centra horizontalmente los íconos */
@@ -96,7 +95,9 @@ body {
   .twitter-icon:hover {
     color: #55acee !important; /* Color de Twitter */
   }
-
+  .navbar-nav {
+    justify-content: flex-center; /* Alinea los íconos a la derecha en pantallas grandes */
+}
 /* Elimina el subrayado en los enlaces del navbar */
 .navbar-nav .nav-link {
     text-decoration: none; /* Sin subrayado */
@@ -120,15 +121,20 @@ body {
     .navbar {
         font-size: 25px; /* Reduce el tamaño de fuente en pantallas pequeñas */
         padding: 5px 10px; /* Ajusta el padding en pantallas pequeñas */
+        flex-direction: column; /* Cambia la dirección de los elementos a columna en pantallas pequeñas */
+        align-items: flex-start; /* Alinea a la izquierda */
+        width: 100%; /* Asegúrate de que ocupe todo el ancho */
     }
-
+    .navbar-nav {
+        justify-content: flex-start; /* Alinea los íconos a la izquierda en pantallas pequeñas */
+    }
     .navbar-nav .nav-item {
         margin-right: 15px; /* Reduce el espacio entre enlaces */
     }
 
     .social-icons {
         margin-left: 0; /* Elimina el margen a la izquierda */
-        justify-content: flex-end; /* Alinea íconos a la derecha */
+        justify-content: flex-start; /* Alinea íconos a la derecha */
     }
 
     .social-icons a {
@@ -183,7 +189,7 @@ body {
 .hero-carousel {
     position: relative;
     overflow: hidden; /* Asegura que las imágenes no se desborden */
-    height: 50vh; /* Ajusta la altura del carousel */
+    height: auto; /* Ajusta la altura del carousel */
 }
 
 .carousel-inner {
@@ -191,14 +197,15 @@ body {
 }
 
 .carousel-item {
-    height: 100%; /* Asegura que cada item ocupe el 100% de la altura */
+    transition: opacity 0.5s ease-in-out; /* Transición suave al cambiar de imagen */
 }
+
 
 /* Estilo para las imágenes del carousel */
 .carousel-item img {
     object-fit: cover; /* Cubre el contenedor manteniendo la proporción de la imagen */
-    width: 100%; /* Asegura que la imagen ocupe el 100% del ancho del contenedor */
-    height: 100%; /* Asegura que la imagen ocupe el 100% de la altura del contenedor */
+    width: 100%;
+    height: auto; /* Asegura que no exceda la altura del contenedor */
 }
 
 /* Estilos de los controles del carousel */
@@ -235,7 +242,7 @@ body {
 /* Media Queries para pantallas grandes */
 @media (min-width: 769px) {
     .hero-carousel {
-        height: 60vh; /* Altura mayor en pantallas grandes */
+        height: 50vh; /* Altura mayor en pantallas grandes */
     }
 
     .carousel-item img {
