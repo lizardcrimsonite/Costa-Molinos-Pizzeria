@@ -292,7 +292,7 @@ body {
 }
 
 .card-img-top {
-    height: 200px; /* Ajusta la altura según tus necesidades */
+    height: 500px; /* Ajusta la altura según tus necesidades */
     object-fit: cover; /* Esto recortará la imagen si es necesario */
 }
 
@@ -389,7 +389,7 @@ body {
 
 /* Estilos para el formulario */
 .glass-form {
-    background: rgba(235, 235, 235, 0.8); /* Fondo semitransparente */
+    background: rgba(225, 225, 225, 0.3); /* Fondo semitransparente */
     border-radius: 8px; /* Bordes redondeados */
     padding: 30px; /* Espaciado interno */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra */

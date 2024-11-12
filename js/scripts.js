@@ -82,6 +82,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Manejo del botón "Enviar" que abre el cliente de correo
+    document.getElementById('enviarBtn').addEventListener('click', function() {
+        window.location.href = 'mailto:correo@ejemplo.com';
+    });
+
     // Manejo de los íconos de redes sociales en el footer
     const socialIcons = document.querySelectorAll('footer .fab');
 
