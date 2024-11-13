@@ -86,15 +86,16 @@ body {
 /* Color en hover para cada ícono */
 .facebook-icon:hover {
     color: #3b5998 !important; /* Color de Facebook */
-  }
-  
-  .instagram-icon:hover {
+}
+
+.instagram-icon:hover {
     color: #e4405f !important; /* Color de Instagram */
-  }
-  
-  .twitter-icon:hover {
+}
+
+.twitter-icon:hover {
     color: #55acee !important; /* Color de Twitter */
-  }
+}
+
   .navbar-nav {
     justify-content: flex-center; /* Alinea los íconos a la derecha en pantallas grandes */
 }
@@ -267,6 +268,9 @@ body {
 /* Estilo para las tarjetas */
 .card {
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efecto de transición suave */
+    width: auto; /* o el tamaño que necesites */
+    height: auto; /* o el tamaño que necesites */
+    overflow: hidden; /* Esto asegura que cualquier exceso de la imagen no se muestre fuera de la card */
 }
 
 .card-title {
@@ -292,8 +296,9 @@ body {
 }
 
 .card-img-top {
-    height: 500px; /* Ajusta la altura según tus necesidades */
-    object-fit: cover; /* Esto recortará la imagen si es necesario */
+    width: 100%;
+    height: 700px;
+    object-fit: cover;
 }
 
 /* Efecto al pasar el mouse sobre la tarjeta */
